@@ -1,5 +1,6 @@
 <div align="center">
   <picture>
+      <!-- <img src="./figures/logo.png" width="20%" style="border: none; box-shadow: none;"> -->
       <img src="./figures/logo_new.png" width="20%" style="border: none; box-shadow: none;">
   </picture>
 </div >
@@ -42,39 +43,14 @@
   <div style="width: 100%; height: 2px; margin: 20px 0; background: linear-gradient(90deg, transparent, #00d9ff, transparent);"></div>
 </div>
 
-LightAgent is built around an **open-source 3B-parameter on-device GUI agent model** designed specifically for real-world smartphone interaction. This 3B Vision-Language Model is small enough to be deployed on commodity GPUs and emerging mobile NPUs, while still being strong enough to handle complex multi-step GUI reasoning and control.
+LightAgent is a mobile agentic framework designed for efficient smartphone task execution. It features lightweight 3B-scale Vision-Language Models that can run directly on devices. The system combines these compact models with a dynamic device-cloud collaboration approach to optimize both performance and resource usage.
 
-Rather than focusing on ever-larger cloud models, LightAgent treats the **3B on-device GUI agent** as the core capability and surrounds it with a device–cloud collaboration framework, data pipeline, and evaluation tools. A two-stage training recipe (SFT + GRPO-style RL with synthetic data) enables this compact model to approach the performance of 7B–9B models on Android GUI tasks, making it a practical and cost-effective choice for edge deployment.
-
----
-
-## 🔍 LightAgent-3B: Open-Source On-Device GUI Agent Model
-
-- **Model size & architecture**: ~3B-parameter vision-language model tailored for mobile GUI understanding and action generation, optimized for efficiency rather than maximal scale.
-- **On-device first**: Designed to run as the **primary agent on the device**, with latency and memory usage compatible with single 3090-class GPUs and future mobile chips, instead of assuming always-on cloud access.
-- **GUI-specialized skills**: Trained to perceive mobile screens, reason over GUI layouts, and produce structured action sequences (click, scroll, input, navigation) for real-world apps.
-- **Open-source release**: We release the full 3B model weights, configuration, and inference stack so that researchers and practitioners can deploy, fine-tune, and extend the model for their own mobile agents.
-- **Practical sweet spot**: In current hardware conditions, 3B sits at a **practical sweet spot**—significantly stronger than tiny models, but still deployable on edge devices where 7B–9B models are often too heavy.
-
-### Why 3B is the sweet spot for on-device GUI agents
-
-- **Deployment feasibility**: 3B fits comfortably on a single high-end consumer GPU and is a realistic target for upcoming mobile NPUs, while 7B–9B models typically exceed memory or latency budgets for real edge devices.
-- **Latency vs. capability trade-off**: For GUI control, responsiveness matters as much as accuracy. Our experiments show that a well-trained 3B model offers a much better latency/quality trade-off than larger models that are hard to deploy.
-- **Cloud offloading as a backup, not default**: In LightAgent, the 3B model handles steps locally, with the hardest cases escalated to strong cloud models—reducing cost and preserving user privacy.
-
-### Model release & resources
-
-- **Model weights**: `LightAgent-3B` is released on Hugging Face (see the badge above).
-- **Serving stack**: We provide vLLM-based scripts to run the 3B model efficiently as an inference service.
-- **Training recipe**: The training code and instructions (SFT + RL with synthetic GUI data) are documented under `model_training/` so you can reproduce or adapt the 3B model for your own use cases.
+The framework uses a two-stage training methodology combining SFT and GRPO reinforcement learning with synthetic data generation. This approach enables the 3B models to achieve performance comparable to much larger 7B-9B models. Through intelligent task orchestration and structured memory mechanisms, LightAgent reduces cloud dependency by approximately 10% while maintaining robust performance across over 25 mobile applications in real-world scenarios.
 
 ---
 
 ## 📖 Table of Contents
-- [✨LightAgent✨: Lightweight and Cost-Effective  Mobile Agents](#lightagent-lightweight-and-cost-effective--mobile-agents)
-  - [🔍 LightAgent-3B: Open-Source On-Device GUI Agent Model](#-lightagent-3b-open-source-on-device-gui-agent-model)
-    - [Why 3B is the sweet spot for on-device GUI agents](#why-3b-is-the-sweet-spot-for-on-device-gui-agents)
-    - [Model release \& resources](#model-release--resources)
+- [✨LightAgent✨: Mobile Agentic Foundation Models](#lightagent-mobile-agentic-foundation-models)
   - [📖 Table of Contents](#-table-of-contents)
   - [🌟 Key Features of LightAgent](#-key-features-of-lightagent)
     - [🤖 Lightweight Agentic Foundation Models](#-lightweight-agentic-foundation-models)
@@ -138,7 +114,12 @@ Rather than focusing on ever-larger cloud models, LightAgent treats the **3B on-
 
 ---
 
+<!-- <img src="./figures/model.png" style="zoom:100%;" /> -->
 <img src="./figures/model_large.png" style="zoom:100%;" />
+<!-- <img src="./figures/model_1.png" style="zoom:100%;" />
+<div align="center">
+<img src="./figures/model_2.png" width="60%" />
+</div> -->
 
 ---
 
@@ -232,6 +213,8 @@ The key findings from our online evaluation on AndroidLab are summarized as foll
 - Furthermore, when compared with closed-source models, LightAgent-3B's performance is comparable to previous or lightweight versions of these proprietary models.
 
 <p align="center">
+  <!-- <img src="./figures/model_bar.png" width="100%"/> -->
+  <!-- <img src="./figures/model_bar_two_subplots.png" width="50%"/> -->
   <img src="./figures/three_subplots_corrected.png" width="90%"/>
 </p>
 
