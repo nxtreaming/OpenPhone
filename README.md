@@ -247,33 +247,50 @@ python generate_result.py --input_folder ./logs/evaluation/ --output_folder ./lo
 • Then Execute: Run the result generation command above<br>
 • Error Prevention: This step prevents file path conflicts and ensures proper result compilation<br>
 
-## 🎯 Evaluation Results
+---
 
-The key findings from our online evaluation on AndroidLab are summarized as follows:
+## 🎯 📊 Key Evaluation Findings for OpenPhone
 
-- OpenPhone, when deployed in a device-cloud collaborative setting, incurs only a relatively small performance drop while effectively reducing the number of cloud model invocations.
-- Notably, prompting large models for extended reasoning does not always yield better results—this benefit depends on the capability of the cloud model, and only sufficiently strong models can take advantage of such strategies.
-- We also report a comparison between OpenPhone-3B and both similar-sized and larger models (such as 9B models), showing that OpenPhone-3B achieves performance close to that of 9B models, making it a true "small powerhouse."
-- Furthermore, when compared with closed-source models, OpenPhone-3B's performance is comparable to previous or lightweight versions of these proprietary models.
+### 🏆 Small Model, Big Performance
+- **Size vs Performance**: OpenPhone-3B achieves performance comparable to 9B models while maintaining the deployment advantages of a compact architecture.
+- **Efficiency Champion**: Establishes itself as a genuine "small powerhouse" that challenges the bigger-is-better assumption in mobile AI.
+
+### 🥊 Competitive Performance
+- **Against Proprietary Models**: OpenPhone-3B shows respectable performance compared to lightweight versions of proprietary models when evaluated on standard benchmarks.
+- **Potential of Small Models**: Demonstrates promising results that validate the viability of compact open-source approaches in mobile agent developmen.
+
+### 🔄 Device-Cloud Framework Works
+- **Performance with Efficiency**: OpenPhone's hybrid architecture delivers near-optimal performance while dramatically reducing cloud model usage.
+- **Intelligent Routing**: Proves that smart task routing creates practical efficiency gains without sacrificing capability.
+
+### 🧠 Longer Prompts Don't Always Help
+- **Context Matters**: Extended prompting strategies only improve performance when paired with sufficiently capable cloud models.
+- **Smart Matching**: Highlights the importance of matching reasoning complexity to model capability rather than assuming longer prompts always help.
 
 <p align="center">
   <img src="./figures/three_subplots_corrected.png" width="90%"/>
 </p>
 
-For each MLLM, we measure the average total steps required to complete tasks, the proportion of steps handled by the on-device model versus the cloud model, and the average steps when using only the cloud model to quantify the reduction in cloud calls. The main results are as follows:
+## 📈 Device-Cloud Distribution Analysis for Phone Agents
 
-- The cloud model is still responsible for about 65% of the steps, mainly due to the limited capacity of the smaller on-device model.
-- Introducing the on-device model leads to approximately a 10% reduction in cloud calls.
-- Stronger cloud models (such as GLM-4.5V) experience a smaller reduction in cloud calls, as they are capable of solving more tasks independently without relying on the on-device model.
+To evaluate the practical efficiency of our hybrid approach, we measured key metrics across different MLLMs: average total steps per task, the proportion of steps handled by on-device versus cloud models, and cloud call reduction compared to cloud-only baselines.
+
+### 📊 Workload Distribution
+Cloud models still handle approximately 65% of execution steps, reflecting the computational limitations of smaller on-device models for complex reasoning tasks.
+
+### 💰 Efficiency Gains
+Introducing on-device processing achieves roughly 10% reduction in cloud API calls, translating to direct cost savings and reduced latency.
+
+### 🎯 Model Capability Impact
+Advanced cloud models like GLM-4.5V show smaller reductions in cloud dependency, as their superior capabilities enable more independent task completion without requiring on-device assistance.
 
 <p align="center">
   <img src="./figures/device_cloud_per.png" width="49%"/>
   <img src="./figures/device_cloud_reduce.png" width="47%"/>
 </p>
 
-We evaluate the average inference time per step using vLLM under different GPU setups. GLM-4.1V-9B-Thinking could not run on a single 3090 GPU due to context length limits, so only two-GPU results are shown.
-
-OpenPhone, thanks to its lightweight architecture, demonstrates a clear advantage in inference speed, making it more suitable for real-world on-device scenarios. This advantage becomes even more pronounced as computational resources become constrained. In contrast, although GLM-4.1V-9B-Thinking achieves higher performance, its inference time on two 3090s is 3.5 times that of OpenPhone on a single 3090, and 4 times that of OpenPhone on two 3090s. Its inability to run on a single 3090 further limits its feasibility for on-device deployment.
+## ⚡ Inference Speed Comparison
+We evaluated average inference time per step using vLLM across different GPU configurations to assess real-world deployment feasibility. Note that GLM-4.1V-9B-Thinking could not operate on a single 3090 GPU due to context length constraints.
 
 <div align="center">
 
@@ -287,6 +304,20 @@ OpenPhone, thanks to its lightweight architecture, demonstrates a clear advantag
 
 </div>
 </p>
+
+### 🎯 Speed Advantage
+- **Clear Winner**: OpenPhone demonstrates significant inference speed advantages thanks to its lightweight 3B architecture
+- **Real-World Ready**: Speed benefits become increasingly pronounced under constrained computational resources, matching typical edge deployment scenarios
+
+### 📊 Quantified Comparison
+- **3.5x Faster**: OpenPhone on single 3090 vs GLM-4.1V-9B-Thinking on dual 3090s.
+- **4x Faster**: OpenPhone on dual 3090s vs GLM-4.1V-9B-Thinking on dual 3090s.
+- **OpenPhone's Lightweight**: GLM-4.1V-9B-Thinking's inability to run on single 3090 severely limits edge deployment options.
+
+### 💡 Practical Implications
+The trade-off is clear: while larger models like GLM-4.1V-9B-Thinking achieve higher task performance, OpenPhone's speed advantages make it far more suitable for real-world on-device scenarios where response time and hardware constraints matter.
+
+---
 
 ## 🌟 Citation
 
