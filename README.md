@@ -1,6 +1,6 @@
 <div align="center">
   <picture>
-      <img src="./figures/logo_new.png" width="20%" style="border: none; box-shadow: none;">
+      <img src="./figures/phoneagent_logo.png" width="20%" style="border: none; box-shadow: none;">
   </picture>
 </div >
 
@@ -21,13 +21,13 @@
 <div align="center">
   <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 25px; text-align: center;">
     <p>
-      <a href='https://github.com/HKUDS/LightAgent'><img src='https://img.shields.io/badge/🔥Project-Page-00d9ff?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e'></a>
-      <a href="https://huggingface.co/datasets/hkuds/LightAgent_dataset"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-ffc107?style=for-the-badge&color=ffc107&logoColor=white&labelColor=1a1a2e"/></a>
-      <a href="https://huggingface.co/hkuds/LightAgent_model"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-ffc107?style=for-the-badge&color=ffc107&logoColor=white&labelColor=1a1a2e"/></a>
+      <a href='https://github.com/HKUDS/OpenPhone'><img src='https://img.shields.io/badge/🔥Project-Page-00d9ff?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1a2e'></a>
+      <a href="https://huggingface.co/datasets/hkuds/OpenPhone_dataset"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-ffc107?style=for-the-badge&color=ffc107&logoColor=white&labelColor=1a1a2e"/></a>
+      <a href="https://huggingface.co/hkuds/OpenPhone_model"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-ffc107?style=for-the-badge&color=ffc107&logoColor=white&labelColor=1a1a2e"/></a>
       <a href='https://github.com/THUDM/Android-Lab'><img src='https://img.shields.io/badge/⚡Based%20on-AndroidLab-4ecdc4?style=for-the-badge&logo=lightning&logoColor=white&labelColor=1a1a2e'></a>
     </p>
     <p>
-      <a href="https://github.com/HKUDS/LightAgent/stargazers"><img src='https://img.shields.io/github/stars/HKUDS/LightAgent?color=00d9ff&style=for-the-badge&logo=star&logoColor=white&labelColor=1a1a2e' /></a>
+      <a href="https://github.com/HKUDS/OpenPhone/stargazers"><img src='https://img.shields.io/github/stars/HKUDS/OpenPhone?color=00d9ff&style=for-the-badge&logo=star&logoColor=white&labelColor=1a1a2e' /></a>
       <a href="./Communication.md"><img src="https://img.shields.io/badge/💬Feishu-Group-07c160?style=for-the-badge&logoColor=white&labelColor=1a1a2e"></a>
       <a href="./Communication.md"><img src="https://img.shields.io/badge/WeChat-Group-07c160?style=for-the-badge&logo=wechat&logoColor=white&labelColor=1a1a2e"></a>
       <a href=""><img src="https://img.shields.io/badge/Platform-Android-d3d3d3?style=for-the-badge&logo=android&logoColor=white&labelColor=1a1a2e"/></a>
@@ -95,15 +95,17 @@ Considering the compute limitations of today’s edge devices, models with **≤
 - [✨OpenPhone✨: Mobile Agentic Foundation Models for AI Phone](#openphone-mobile-agentic-foundation-models-for-ai-phone)
   - [🎯 What is OpenPhone?](#-what-is-openphone)
   - [💡 Research Highlights](#-research-highlights)
-  - [🔍 OpenPhone-3B: Open-Source Lightweight Agent Model](#-lightagent-3b-open-source-on-device-gui-agent-model)
-    - [Why 3B is the sweet spot for on-device GUI agents](#why-3b-is-the-sweet-spot-for-on-device-gui-agents)
-    - [Model release \& resources](#model-release--resources)
+    - [🔍 OpenPhone‑3B: Lightweight Agentic Model](#-openphone3b-lightweight-agentic-model)
+    - [Why 3B is the Sweet Spot for Phone Agents](#why-3b-is-the-sweet-spot-for-phone-agents)
+  - [🚀 Model Release \& Resources](#-model-release--resources)
+    - [📦 Ready-to-Deploy Model](#-ready-to-deploy-model)
+    - [🛠️ Complete Training Pipeline](#️-complete-training-pipeline)
   - [📖 Table of Contents](#-table-of-contents)
-  - [🌟 Key Features of OpenPhone](#-key-features-of-OpenPhone)
+  - [🌟 Key Features of OpenPhone](#-key-features-of-openphone)
     - [🤖 Lightweight Agentic Foundation Models](#-lightweight-agentic-foundation-models)
     - [☁️ Device-Cloud Collaboration Framework](#️-device-cloud-collaboration-framework)
     - [🎯 Comprehensive Mobile Agent Evaluation Playground](#-comprehensive-mobile-agent-evaluation-playground)
-  - [🌟 Core Solutions of OpenPhone](#-core-solutions-of-OpenPhone)
+  - [🌟 Technical Innovation \& Implementation](#-technical-innovation--implementation)
     - [🧠 Model Training: SFT+RL](#-model-training-sftrl)
     - [☁️ Device-Cloud Collaboration Framework](#️-device-cloud-collaboration-framework-1)
     - [💾 Efficient Memory Mechanism for Mobile Agents](#-efficient-memory-mechanism-for-mobile-agents)
@@ -127,7 +129,6 @@ Considering the compute limitations of today’s edge devices, models with **≤
 ---
 
 ## 🌟 Key Features of OpenPhone
-OpenPhone delivers a complete **Mobile AI Ecosystem**. We provide both a **lightweight 3B agentic foundation model** and an **intelligent device-cloud collaboration framework**, enabling developers to build practical mobile agents that balance **performance**, **privacy**, and **cost**.
 
 ### 🤖 Lightweight Agentic Foundation Models
 • **Compact Architecture**: Specialized **3B-scale** Vision-Language Models optimized for mobile GUI tasks with minimal computational footprint.<br>
@@ -188,7 +189,7 @@ Installation: Follow the official AndroidLab documentation [AndroidLab](https://
 - Optimized for efficient small model serving<br>
 
 **Model Access**:
-- LightAgent Weights: 3B parameter model hosted on HuggingFace<br>
+- OpenPhone Weights: 3B parameter model hosted on HuggingFace<br>
 - Deployment Process: Download weights → Deploy via vLLM → Configure inference service<br>
 - Service Ready: Seamless integration with evaluation pipeline<br>
 
@@ -252,8 +253,8 @@ The key findings from our online evaluation on AndroidLab are summarized as foll
 
 - OpenPhone, when deployed in a device-cloud collaborative setting, incurs only a relatively small performance drop while effectively reducing the number of cloud model invocations.
 - Notably, prompting large models for extended reasoning does not always yield better results—this benefit depends on the capability of the cloud model, and only sufficiently strong models can take advantage of such strategies.
-- We also report a comparison between LightAgent-3B and both similar-sized and larger models (such as 9B models), showing that LightAgent-3B achieves performance close to that of 9B models, making it a true "small powerhouse."
-- Furthermore, when compared with closed-source models, LightAgent-3B's performance is comparable to previous or lightweight versions of these proprietary models.
+- We also report a comparison between OpenPhone-3B and both similar-sized and larger models (such as 9B models), showing that OpenPhone-3B achieves performance close to that of 9B models, making it a true "small powerhouse."
+- Furthermore, when compared with closed-source models, OpenPhone-3B's performance is comparable to previous or lightweight versions of these proprietary models.
 
 <p align="center">
   <img src="./figures/three_subplots_corrected.png" width="90%"/>
@@ -272,17 +273,17 @@ For each MLLM, we measure the average total steps required to complete tasks, th
 
 We evaluate the average inference time per step using vLLM under different GPU setups. GLM-4.1V-9B-Thinking could not run on a single 3090 GPU due to context length limits, so only two-GPU results are shown.
 
-LightAgent, thanks to its lightweight architecture, demonstrates a clear advantage in inference speed, making it more suitable for real-world on-device scenarios. This advantage becomes even more pronounced as computational resources become constrained. In contrast, although GLM-4.1V-9B-Thinking achieves higher performance, its inference time on two 3090s is 3.5 times that of LightAgent on a single 3090, and 4 times that of LightAgent on two 3090s. Its inability to run on a single 3090 further limits its feasibility for on-device deployment.
+OpenPhone, thanks to its lightweight architecture, demonstrates a clear advantage in inference speed, making it more suitable for real-world on-device scenarios. This advantage becomes even more pronounced as computational resources become constrained. In contrast, although GLM-4.1V-9B-Thinking achieves higher performance, its inference time on two 3090s is 3.5 times that of OpenPhone on a single 3090, and 4 times that of OpenPhone on two 3090s. Its inability to run on a single 3090 further limits its feasibility for on-device deployment.
 
 <div align="center">
 
 | Model                  | GPUs        | Size | SR   | Time Cost / Step |
 | ---------------------- | ----------- | ---- | ---- | ---------------- |
 | Qwen2.5-VL-7B-Instruct | Single 3090 | 7B   | 10.1 | 6289.15 ms       |
-| LightAgent             | Single 3090 | 3B   | 15.2 | 4170.63 ms       |
+| OpenPhone              | Single 3090 | 3B   | 15.2 | 4170.63 ms       |
 | GLM-4.1V-9B-Thinking   | Two 3090s   | 9B   | 24.6 | 14584.89 ms      |
 | Qwen2.5-VL-7B-Instruct | Two 3090s   | 7B   | 10.1 | 4587.79 ms       |
-| LightAgent             | Two 3090s   | 3B   | 15.2 | 3524.25 ms       |
+| OpenPhone              | Two 3090s   | 3B   | 15.2 | 3524.25 ms       |
 
 </div>
 </p>
@@ -317,8 +318,6 @@ This project is released under the [MIT License](./LICENSE).
 **If this project helps you, please give us a Star🌟**
 
 **🤖 Empower AI Phone with Agents!**
-
-</div>
 
 <br>
 
